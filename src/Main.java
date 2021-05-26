@@ -14,12 +14,13 @@ public class Main {
 	static int[] occurrence;
 
 	public static void main(String[] args) {
+		/* The code being measured starts */
 		long startTime = System.nanoTime();
 		
 		edges = new ArrayList<ArrayList<Integer>>();
 		
 		try {
-			File file = new File("tests/test3.txt");
+			File file = new File("tests/test2.txt");
 			Scanner reader = new Scanner(file);
 			
 			String data = reader.nextLine();
@@ -48,18 +49,13 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		//System.out.println(edges);
-		
 		occurrence = new int[vNum];
-		//Arrays.fill(occurrence, 0); //TODO runtime check
 		
 		for(int i=0; i<vNum; i++) {
 			int[] res = BFS(i);
-			System.out.println(i);
+			//System.out.println(i);
 			if(res != null) {
 				for(int j=i; j<vNum; j++) {
-					
-					//System.out.println(i + " " + j + " : " + Arrays.toString(res));
 					int vertex = j;
 					while(res[vertex] != i && res[vertex] != -1) {
 						occurrence[res[vertex]]++;
@@ -71,11 +67,17 @@ public class Main {
 		
 		System.out.println(Arrays.toString(occurrence));
 		
-        /* … The code being measured ends … */
+		int max = -1;
+		for(int i=0; i < vNum; i++) {
+			if(max < occurrence[i]) max = occurrence[i];
+		}
+		
+		System.out.println(max);
+		
+        /* The code being measured ends */
  
         long endTime = System.nanoTime();
  
-        // get the difference between the two nano time valuess
         long timeElapsed = endTime - startTime;
  
         System.out.println("Execution time in nanoseconds: " + timeElapsed);
@@ -102,8 +104,6 @@ public class Main {
 	                visited[edges.get(vertex).get(i)] = true;
 	                path[edges.get(vertex).get(i)] = vertex;
 	                container.add(edges.get(vertex).get(i));
-	                    
-	                //if (edges.get(vertex).get(i) == dst) return path;
 				}
 			}	
 		}
