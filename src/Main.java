@@ -51,15 +51,17 @@ public class Main {
 		//System.out.println(edges);
 		
 		occurrence = new int[vNum];
-		Arrays.fill(occurrence, 0); //TODO runtime check
+		//Arrays.fill(occurrence, 0); //TODO runtime check
 		
 		for(int i=0; i<vNum; i++) {
-			for(int j=i; j<vNum; j++) {
-				int[] res = BFS(i,j);
-				if(res != null) {
+			int[] res = BFS(i);
+			System.out.println(i);
+			if(res != null) {
+				for(int j=i; j<vNum; j++) {
+					
 					//System.out.println(i + " " + j + " : " + Arrays.toString(res));
 					int vertex = j;
-					while(res[vertex] != i) {
+					while(res[vertex] != i && res[vertex] != -1) {
 						occurrence[res[vertex]]++;
 						vertex = res[vertex];
 					}
@@ -80,7 +82,7 @@ public class Main {
         System.out.println("Execution time in milliseconds: " + timeElapsed / 1000000);
 	}
 	
-	public static int[] BFS(int src, int dst) {
+	public static int[] BFS(int src) {
 		ArrayDeque<Integer> container = new ArrayDeque<Integer>();
 		
 		int path[] = new int[vNum];
@@ -101,12 +103,12 @@ public class Main {
 	                path[edges.get(vertex).get(i)] = vertex;
 	                container.add(edges.get(vertex).get(i));
 	                    
-	                if (edges.get(vertex).get(i) == dst) return path;
+	                //if (edges.get(vertex).get(i) == dst) return path;
 				}
 			}	
 		}
 		
-		return null;
+		return path;
 	}
 	
 }
