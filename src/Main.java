@@ -14,7 +14,6 @@ public class Main {
 	static int[] occurrence;
 
 	public static void main(String[] args) {
-		
 		/* The code being measured starts */
 		long startTime = System.nanoTime();
 		
