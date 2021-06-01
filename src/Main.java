@@ -20,7 +20,7 @@ public class Main {
 		edges = new ArrayList<ArrayList<Integer>>();
 		
 		try {
-			File file = new File("tests/test2.txt");
+			File file = new File("tests/test1.txt");
 			Scanner reader = new Scanner(file);
 			
 			String data = reader.nextLine();
