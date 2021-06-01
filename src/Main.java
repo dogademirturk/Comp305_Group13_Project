@@ -65,22 +65,21 @@ public class Main {
 			}
 		}
 		
-		System.out.println(Arrays.toString(occurrence));
+		//System.out.println(Arrays.toString(occurrence));
 		
-		int max = -1;
+		int max = 0;
 		for(int i=0; i < vNum; i++) {
-			if(max < occurrence[i]) max = occurrence[i];
+			if(occurrence[max] < occurrence[i]) max = i;
 		}
 		
-		System.out.println(max);
+		System.out.println("Most popular person is " + max + " with " + occurrence[max] + " occurrence.");
 		
-        /* The code being measured ends */
- 
+		/* The code being measured ends */
         long endTime = System.nanoTime();
- 
+
         long timeElapsed = endTime - startTime;
  
-        System.out.println("Execution time in nanoseconds: " + timeElapsed);
+        //System.out.println("Execution time in nanoseconds: " + timeElapsed);
         System.out.println("Execution time in milliseconds: " + timeElapsed / 1000000);
 	}
 	
@@ -108,7 +107,7 @@ public class Main {
 			}	
 		}
 		
-		return path;
+		return path; //shortest paths from src to each node that has a path with src
 	}
 	
 }
