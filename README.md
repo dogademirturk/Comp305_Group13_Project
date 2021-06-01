@@ -17,11 +17,14 @@ Approach 1:
 
 Time Complexity: O(V^4)
 
-Result: 
+Results: 
+
 Test1: Most popular person is 0 with 10 occurence
+
 Execution time in milliseconds: 44
 
 Test2: Most popular person is 90 with 3811 occurence
+
 Execution time in milliseconds: 354
 
 Test3: NA
@@ -30,11 +33,14 @@ Approach 2:
 
 Time Complexity: O(V^3)
 
-Result:
+Results:
+
 Test1: Most popular person is 0 with 10 occurence
+
 Execution time in milliseconds: 31
 
 Test2: Most popular person is 90 with 3811 occurence
+
 Execution time in milliseconds: 86
 
 Test3: NA
