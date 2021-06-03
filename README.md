@@ -12,6 +12,20 @@ Third, filter the overall information such that only both sides of the all conne
 Fourth, we find the shortest paths between each pair of our first nodes friends and decides that the most popular person in its connection list is the person who has the most occurrence in these shortest paths.
 
 
+# How to run the code:
+Open Terminal and go to src folder.
+
+Compile: 
+
+javac Main.java
+
+Run: 
+
+java Main.java test1.txt
+
+java Main.java test2.txt
+
+
 
 Approach 1:
 

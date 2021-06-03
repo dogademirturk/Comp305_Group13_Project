@@ -14,13 +14,14 @@ public class Main {
 	static int[] occurrence;
 
 	public static void main(String[] args) {
+		if(args.length == 0) System.exit(0);
 		/* The code being measured starts */
 		long startTime = System.nanoTime();
 		
 		edges = new ArrayList<ArrayList<Integer>>();
 		
 		try {
-			File file = new File("tests/test1.txt");
+			File file = new File("../tests/" + args[0]);
 			Scanner reader = new Scanner(file);
 			
 			String data = reader.nextLine();
